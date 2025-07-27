@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for Indian context */
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md border border-gray-200 p-4;
+  }
+}
+
+/* Mobile-first responsive improvements */
+@media (max-width: 768px) {
+  .grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .grid-cols-1.md\:grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  
+  .px-4.sm\:px-6.lg\:px-8 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .text-3xl {
+    font-size: 1.5rem;
+  }
+  
+  .max-w-md {
+    max-width: 90vw;
+  }
+}
+
+/* Improve cart modal on mobile */
+@media (max-width: 640px) {
+  .absolute.right-0.top-0.h-full.w-full.max-w-md {
+    max-width: 100vw;
+  }
+}
+
+/* Additional mobile enhancements for StreetVendor platform */
+@media (max-width: 768px) {
+  /* Make navbar more compact on mobile */
+  .flex.justify-between.items-center.h-16 {
+    height: 3.5rem;
+  }
+  
+  /* Improve product cards on mobile */
+  .bg-white.rounded-lg.shadow-md.overflow-hidden {
+    margin-bottom: 1rem;
+  }
+  
+  /* Better spacing for stats cards */
+  .grid.grid-cols-1.md\:grid-cols-4.gap-6 {
+    gap: 0.75rem;
+  }
+  
+  /* Responsive text sizing */
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+  
+  .text-lg {
+    font-size: 1rem;
+  }
+  
+  /* Improve button sizing on mobile */
+  .btn-primary {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (max-width: 640px) {
+  /* Larger touch targets */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better cart button positioning */
+  .fixed.bottom-6.right-6 {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  /* Improve form inputs on mobile */
+  input, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 0.75rem;
+  }
+  
+  /* Better modal header spacing */
+  .flex.items-center.justify-between.p-6 {
+    padding: 1rem;
+  }
+  
+  /* Notification dropdown full width on small screens */
+  .absolute.right-0.mt-2.w-80 {
+    width: calc(100vw - 2rem);
+    right: 1rem;
+  }
+}
+
+/* Landscape phone optimizations */
+@media (max-width: 896px) and (orientation: landscape) {
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  
+  /* Compact headers in landscape */
+  .text-3xl.font-bold.text-gray-900.mb-2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin,
+  .animate-pulse,
+  .transition-all,
+  .transition-colors {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn-primary {
+    border: 2px solid #000;
+  }
+  
+  .border-gray-200 {
+    border-color: #000;
+  }
+}
