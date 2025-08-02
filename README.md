@@ -327,7 +327,7 @@ npm run type-check   # TypeScript type checking
 - Open a Pull Request with detailed description
 
 ## 📄 License
-This project is licensed under the MIT License - see the [LICENSE](https://rem.mit-license.org/+) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
 ## 📞 Contact & Support
